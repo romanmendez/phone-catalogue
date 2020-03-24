@@ -33,7 +33,7 @@ The following software is required to be installed on your system:
   npm -v
   ```
 
-## Install
+## Install App
 
 Follow the following steps to get development environment running.
 
@@ -71,22 +71,26 @@ vim .env
 
 Example of server variables:
 
-```bash SERVER_PORT=3000 CLIENT_PORT=1234
+```bash
+SERVER_PORT=3000
+CLIENT_PORT=1234
 
 ```
 
 Once `.env` file is in place, to start the server follow [build instructions](#Build-server)
 
-### Client
+### Build Client
 
-To start the app, follow the next instructions:
+To build the React app and start the app, run the following commands:
 
-Start React app
-
-```javascript
+```bash
 cd client
 npm install
 npm start
 ```
 
 ---
+
+### Run App
+
+Once you have started the server and client servers, open you web browser to http://localhost:1234 (or the port you have manually configured)

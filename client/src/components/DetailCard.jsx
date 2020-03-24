@@ -8,13 +8,13 @@ const DetailCard = ({ selected }) => {
         {selected.manufacturer} {selected.name}
       </h1>
       <table className="table">
-        <thead></thead>
         <tbody>
           <DetailItem name="Color" data={selected.color} />
           <DetailItem name="Price" data={selected.price} />
           <DetailItem name="Screen" data={selected.screen} />
           <DetailItem name="Processor" data={selected.processor} />
           <DetailItem name="Ram" data={selected.ram} />
+          <DetailItem name="Description" data={selected.description} />
         </tbody>
       </table>
     </>
