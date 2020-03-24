@@ -13,7 +13,7 @@ const Main = ({ phones, getPhones }) => {
   }, []);
 
   return (
-    <div>
+    <>
       <div className="container">
         <div className="row">
           <div className="col-3" style={{ maxHeight: "90vh", overflow: "scroll" }}>
@@ -24,7 +24,7 @@ const Main = ({ phones, getPhones }) => {
           <div className="col-6">{selected && <DetailCard {...{ selected }} />}</div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
