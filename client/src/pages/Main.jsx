@@ -13,18 +13,15 @@ const Main = ({ phones, getPhones }) => {
   }, []);
 
   return (
-    <>
-      <div className="container">
-        <div className="row">
-          <div className="col-3" style={{ maxHeight: "90vh", overflow: "scroll" }}>
-            <div className="list-group"></div>
-            {phones && phones.map((phone, i) => <ListItem key={i} {...{ phone, setSelected }} />)}
-          </div>
-          <div className="col">{selected && <PhoneImage {...{ selected }} />}</div>
-          <div className="col-6">{selected && <DetailCard {...{ selected }} />}</div>
+    <div className="container">
+      <div className="row">
+        <div className="col-3" style={{ maxHeight: "90vh", overflow: "scroll" }}>
+          <div className="list-group list-group-flush">{phones && phones.map((phone, i) => <ListItem key={i} {...{ phone, setSelected }} />)}</div>
         </div>
+        <div className="col">{selected && <PhoneImage {...{ selected }} />}</div>
+        <div className="col-6">{selected && <DetailCard {...{ selected }} />}</div>
       </div>
-    </>
+    </div>
   );
 };
 
