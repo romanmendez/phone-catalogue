@@ -2,6 +2,8 @@
 
 This project is a ténical challenge as part of my inteview process with Guidesmiths.
 
+<img src="./server/public/images/app_screenshot.png">
+
 ## Tools
 
 - [NodeJS] - Javascript runtime
