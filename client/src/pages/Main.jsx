@@ -10,7 +10,6 @@ const Main = ({ phones, getPhones }) => {
 
   useEffect(() => {
     getPhones();
-    setSelected(phones[0]);
   }, []);
 
   return (
@@ -22,7 +21,7 @@ const Main = ({ phones, getPhones }) => {
             {phones && phones.map((phone, i) => <ListItem key={i} {...{ phone, setSelected }} />)}
           </div>
           <div className="col">{selected && <PhoneImage {...{ selected }} />}</div>
-          <div className="col-5">{selected && <DetailCard {...{ selected }} />}</div>
+          <div className="col-6">{selected && <DetailCard {...{ selected }} />}</div>
         </div>
       </div>
     </div>
