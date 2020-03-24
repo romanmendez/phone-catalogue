@@ -90,3 +90,7 @@ npm start
 ```
 
 ---
+
+### Run App
+
+Once you have started the server and client servers, open you web browser to http://localhost:1234 (or the port you have manually configured)
