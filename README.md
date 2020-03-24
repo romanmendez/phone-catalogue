@@ -2,14 +2,12 @@
 
 This project is a ténical challenge as part of my inteview process with Guidesmiths.
 
-<img src="./server/public/images/app_screenshot.png">
+<img src="./server/public/images/app_screenshot2.png">
 
 ## Tools
 
 - [NodeJS] - Javascript runtime
 - [ReactJS] - Javascript library for building user interfaces
-
----
 
 ## Getting Started
 
@@ -89,8 +87,6 @@ npm install
 npm start
 ```
 
----
-
-### Run App
+## Run App
 
 Once you have started the server and client servers, open you web browser to http://localhost:1234 (or the port you have manually configured)
