@@ -9,7 +9,6 @@ export const getPhones = () => {
       .get("/phones")
       .then(res => {
         const phones = res.data;
-        console.log(phones);
         dispatch({
           type: "GET_PHONES_SUCCESS",
           phones: phones

@@ -1,4 +1,5 @@
 import React from "react";
+import DetailItem from "./DetailItem";
 
 const DetailCard = ({ selected }) => {
   console.log("DETAIL CARD", selected);
@@ -10,26 +11,11 @@ const DetailCard = ({ selected }) => {
       <table className="table">
         <thead></thead>
         <tbody>
-          <tr>
-            <td style={{ width: "30%" }}>Color</td>
-            <td>{selected.color}</td>
-          </tr>
-          <tr>
-            <td style={{ width: "30%" }}>Price</td>
-            <td>{selected.price}</td>
-          </tr>
-          <tr>
-            <td style={{ width: "30%" }}>Screen</td>
-            <td>{selected.screen}</td>
-          </tr>
-          <tr>
-            <td style={{ width: "30%" }}>Processor</td>
-            <td>{selected.processor}</td>
-          </tr>
-          <tr>
-            <td style={{ width: "30%" }}>Ram</td>
-            <td>{selected.ram}</td>
-          </tr>
+          <DetailItem name="Color" data={selected.color} />
+          <DetailItem name="Price" data={selected.price} />
+          <DetailItem name="Screen" data={selected.screen} />
+          <DetailItem name="Processor" data={selected.processor} />
+          <DetailItem name="Ram" data={selected.ram} />
         </tbody>
       </table>
     </>

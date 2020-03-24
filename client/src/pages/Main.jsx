@@ -7,7 +7,6 @@ import PhoneImage from "../components/PhoneImage";
 
 const Main = ({ phones, getPhones }) => {
   const [selected, setSelected] = useState(null);
-  console.log("SELECTED IN MAIN", selected);
 
   useEffect(() => {
     getPhones();
