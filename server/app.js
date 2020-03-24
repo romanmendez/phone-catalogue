@@ -11,7 +11,8 @@ const cors = require("cors");
 const app = express();
 
 // Cross Domain CORS whitlist
-const whitelist = ["http://localhost:3000", "http://localhost:1234"];
+const whitelist = [`http://localhost:${process.env.SERVER_PORT}`, `http://localhost:${process.env.CLIENT_PORT}`];
+console.log(whitelist);
 const corsOptions = {
   origin: function(origin, callback) {
     console.log(`Origin: ${origin}`);
@@ -31,11 +32,14 @@ app.use(logger("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "public")));
+app.use("/images", express.static(path.join(__dirname, "public/images")));
 
-// Data
+// Get data and convert imageUrl to local configuration
 const phoneData = require("./public/data/phones.json");
-
+for (let phone of phoneData) {
+  phone.imageUrl = `http://localhost:${process.env.SERVER_PORT}/images/${phone.imageUrl}`;
+}
+console.log(phoneData);
 // Endpoints
 app.use("/phones", (req, res) => {
   res.json(phoneData);
