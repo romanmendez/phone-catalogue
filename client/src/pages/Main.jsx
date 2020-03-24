@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ListItem from "../components/ListItem";
 import { connect } from "react-redux";
-import { getPhones } from "../redux/phones/phonesActions";
+import { getPhones } from "../redux/actions";
 import DetailCard from "../components/DetailCard";
 import PhoneImage from "../components/PhoneImage";
 
@@ -10,6 +10,7 @@ const Main = ({ phones, getPhones }) => {
 
   useEffect(() => {
     getPhones();
+    setSelected(phones[0]);
   }, []);
 
   return (

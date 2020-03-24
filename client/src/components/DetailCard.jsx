@@ -2,7 +2,6 @@ import React from "react";
 import DetailItem from "./DetailItem";
 
 const DetailCard = ({ selected }) => {
-  console.log("DETAIL CARD", selected);
   return (
     <>
       <h1>
