@@ -4,12 +4,10 @@ import { BrowserRouter as Router } from "react-router-dom";
 import Main from "./pages/Main";
 import store from "./redux/store";
 import NavBar from "./components/NavBar";
-import { Reset } from "styled-reset";
 
 const App = () => {
   return (
     <Provider store={store}>
-      <Reset />
       <Router>
         <NavBar />
         <Main />
