@@ -28,9 +28,9 @@ You can download NodeJS here: https://nodejs.org/en/download/
 
 ## Install App
 
-Follow the following steps to get development environment running.
+Follow these steps to get development environment running.
 
-1. Clone 'phone-catalogue' repository from GitHub to your local directory using the following terminal command:
+1. Clone the 'phone-catalogue' repository from GitHub to your local directory using the following terminal command:
 
    ```bash
    git clone https://github.com/romanmendez/phone-catalogue.git
