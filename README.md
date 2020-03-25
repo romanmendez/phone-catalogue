@@ -19,7 +19,7 @@ The following software is required to be installed on your system:
 
   - Node 8.x
 
-Type the following commands in the terminal to verify your node and npm versions
+Type the following commands in the terminal to verify your node versions
 
   ```bash
   node -v
