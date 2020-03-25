@@ -4,28 +4,33 @@ import { connect } from "react-redux";
 import { getPhones } from "../redux/actions";
 import DetailCard from "../components/DetailCard";
 import PhoneImage from "../components/PhoneImage";
+import { MainContainer, Row, Column, List } from "../styles/Components";
+import Loading from "../components/Loading";
 
-const Main = ({ phones, getPhones }) => {
+const Main = ({ loading, phones, getPhones }) => {
   const [selected, setSelected] = useState(null);
 
   useEffect(() => {
     getPhones();
   }, []);
-
-  return (
-    <div className="container">
-      <div className="row">
-        <div className="col-3" style={{ maxHeight: "90vh", overflow: "scroll" }}>
-          <div className="list-group list-group-flush">{phones && phones.map((phone, i) => <ListItem key={i} {...{ phone, setSelected }} />)}</div>
-        </div>
-        <div className="col">{selected && <PhoneImage {...{ selected }} />}</div>
-        <div className="col-6">{selected && <DetailCard {...{ selected }} />}</div>
-      </div>
-    </div>
-  );
+  if (loading) {
+    return <Loading />;
+  } else {
+    return (
+      <MainContainer>
+        <Row>
+          <Column size="25%">
+            <List>{phones && phones.map((phone, i) => <ListItem key={i} {...{ phone, setSelected }} />)}</List>
+          </Column>
+          <Column size="25%">{selected && <PhoneImage {...{ selected }} />}</Column>
+          <Column size="50%">{selected && <DetailCard {...{ selected }} />}</Column>
+        </Row>
+      </MainContainer>
+    );
+  }
 };
 
-const mapStateToProps = state => ({ phones: state.phones });
+const mapStateToProps = state => ({ phones: state.phones, loading: state.loading });
 const mapDispatchToProps = dispatch => ({ getPhones: () => dispatch(getPhones()) });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Main);
