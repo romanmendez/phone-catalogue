@@ -1,12 +1,13 @@
 import React from "react";
+import { MainContainer, NavContainer } from "../styles/Styles";
 
 const NavBar = () => {
   return (
-    <nav className="navbar navbar-dark bg-dark mb-3">
-      <div className="container">
-        <div className="navbar-brand h1">Phone Catalogue</div>
-      </div>
-    </nav>
+    <NavContainer>
+      <MainContainer>
+        <div>Phone Catalogue</div>
+      </MainContainer>
+    </NavContainer>
   );
 };
 

@@ -1,13 +1,14 @@
 import React from "react";
 import DetailItem from "./DetailItem";
+import { Table } from "../styles/Styles";
 
 const DetailCard = ({ selected }) => {
   return (
     <>
-      <h1>
+      <h2>
         {selected.manufacturer} {selected.name}
-      </h1>
-      <table className="table">
+      </h2>
+      <Table>
         <tbody>
           <DetailItem name="Color" data={selected.color} />
           <DetailItem name="Price" data={selected.price} />
@@ -16,7 +17,7 @@ const DetailCard = ({ selected }) => {
           <DetailItem name="Ram" data={selected.ram} />
           <DetailItem name="Description" data={selected.description} />
         </tbody>
-      </table>
+      </Table>
     </>
   );
 };

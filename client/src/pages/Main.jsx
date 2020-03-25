@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { getPhones } from "../redux/actions";
 import DetailCard from "../components/DetailCard";
 import PhoneImage from "../components/PhoneImage";
+import { MainContainer, Row, Column, List } from "../styles/Styles";
 
 const Main = ({ phones, getPhones }) => {
   const [selected, setSelected] = useState(null);
@@ -13,15 +14,15 @@ const Main = ({ phones, getPhones }) => {
   }, []);
 
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col-3" style={{ maxHeight: "90vh", overflow: "scroll" }}>
-          <div className="list-group list-group-flush">{phones && phones.map((phone, i) => <ListItem key={i} {...{ phone, setSelected }} />)}</div>
-        </div>
-        <div className="col">{selected && <PhoneImage {...{ selected }} />}</div>
-        <div className="col-6">{selected && <DetailCard {...{ selected }} />}</div>
-      </div>
-    </div>
+    <MainContainer>
+      <Row>
+        <Column size="20%">
+          <List>{phones && phones.map((phone, i) => <ListItem key={i} {...{ phone, setSelected }} />)}</List>
+        </Column>
+        <Column size="20%">{selected && <PhoneImage {...{ selected }} />}</Column>
+        <Column size="50%">{selected && <DetailCard {...{ selected }} />}</Column>
+      </Row>
+    </MainContainer>
   );
 };
 
