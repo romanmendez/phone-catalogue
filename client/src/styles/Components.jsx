@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export const NavContainer = styled.div`
   position: relative;
@@ -81,9 +81,12 @@ export const Table = styled.table`
   border-collapse: separate;
   border-spacing: 2px;
   border-color: grey;
-  td {
+  td:nth-child(1) {
     line-height: 2rem;
     vertical-align: baseline;
     padding-right: 2rem;
+  }
+  td:nth-child(2) {
+    line-height: 1.5rem;
   }
 `;

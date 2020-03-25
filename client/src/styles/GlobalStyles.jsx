@@ -13,6 +13,7 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 2rem;
     font-weight: 500;
     line-height: 1.2;
+    margin-bottom: 1rem!important;
   }
 `;
 
