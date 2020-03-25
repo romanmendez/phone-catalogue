@@ -1,6 +1,6 @@
 import React from "react";
 import DetailItem from "./DetailItem";
-import { Table } from "../styles/Styles";
+import { Table } from "../styles/Components";
 
 const DetailCard = ({ selected }) => {
   return (

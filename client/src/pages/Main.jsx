@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { getPhones } from "../redux/actions";
 import DetailCard from "../components/DetailCard";
 import PhoneImage from "../components/PhoneImage";
-import { MainContainer, Row, Column, List } from "../styles/Styles";
+import { MainContainer, Row, Column, List } from "../styles/Components";
 import Loading from "../components/Loading";
 
 const Main = ({ loading, phones, getPhones }) => {
@@ -19,10 +19,10 @@ const Main = ({ loading, phones, getPhones }) => {
     return (
       <MainContainer>
         <Row>
-          <Column size="20%">
+          <Column size="25%">
             <List>{phones && phones.map((phone, i) => <ListItem key={i} {...{ phone, setSelected }} />)}</List>
           </Column>
-          <Column size="20%">{selected && <PhoneImage {...{ selected }} />}</Column>
+          <Column size="25%">{selected && <PhoneImage {...{ selected }} />}</Column>
           <Column size="50%">{selected && <DetailCard {...{ selected }} />}</Column>
         </Row>
       </MainContainer>

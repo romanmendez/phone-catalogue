@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const NavContainer = styled.div`
   position: relative;
@@ -22,18 +22,17 @@ export const MainContainer = styled.div`
   padding-left: 50px;
   margin-right: auto;
   margin-left: auto;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
   text-align: left;
 `;
 
 export const Row = styled.div`
   display: flex;
-  flex-wrap: row wrap;
+  flex-flow: row wrap;
   margin-right: -15px;
   margin-left: -15px;
+  @media screen and (max-width: 930px) {
+    flex-flow: column wrap;
+  }
 `;
 
 export const Column = styled.div`
@@ -43,6 +42,12 @@ export const Column = styled.div`
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
+  @media screen and (max-width: 930px) {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2rem;
+  }
 `;
 
 export const List = styled.div`

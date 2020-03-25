@@ -8,7 +8,7 @@ const cors = require("cors");
 const app = express();
 
 // Cross Domain CORS whitlist
-const whitelist = [`http://localhost:${process.env.SERVER_PORT || 3000}`, `http://localhost:${process.env.CLIENT_PORT || 1234}`];
+const whitelist = [`http://localhost:${process.env.SERVER_PORT || 3000}`, `http://localhost:${process.env.CLIENT_PORT || 1234}`, "http://localhost:1212"];
 const corsOptions = {
   origin: function(origin, callback) {
     if (!origin) return callback(null, true);
