@@ -34,7 +34,7 @@ for (let phone of phoneData) {
 
 // Endpoints
 app.use("/phones", (req, res) => {
-  res.json(phoneData);
+  setTimeout(() => res.json(phoneData), 500);
 });
 app.use("/", (req, res) => {
   res.json({ status: "Welcome to the Phone Catalogue app" });
