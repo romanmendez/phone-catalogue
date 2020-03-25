@@ -17,74 +17,59 @@ These instructions will get your app up and running.
 
 The following software is required to be installed on your system:
 
-- NodeJS
-
-  The following version of Node and Npm are required:
-
   - Node 8.x
-  - Npm 3.x
 
-  Type the following commands in the terminal to verify your node and npm versions
+Type the following commands in the terminal to verify your node versions
 
   ```bash
   node -v
-  npm -v
   ```
+You can download NodeJS here: https://nodejs.org/en/download/
 
 ## Install App
 
-Follow the following steps to get development environment running.
+Follow these steps to get development environment running.
 
-1. Clone 'guaurderia/app' repository from GitHub
-
-   ```bash
-   git clone https://github.com/guaurderia/app.git
-   ```
-
-   _or using ssh_
+1. Clone the 'phone-catalogue' repository from GitHub to your local directory using the following terminal command:
 
    ```bash
-   git clone git@github.com:guaurderia/app.git
+   git clone https://github.com/romanmendez/phone-catalogue.git
    ```
 
-2. Once you have downloaded the repository you will need to install the server and cliente dependencies.
-
-### Build Server
-
-In the terminal, go to the root path of the app and run the following commands:
+2. Once you have downloaded the repository you will need to `cd` into the `/server` path of the repository to install the server dependencies:
 
 ```bash
 cd server
 npm install
+```
+
+3. After intalling the server dependencies, go back to the root of the repository and `cd` into the `/client` path to install the client dependencies:
+
+```bash
+cd client
+npm install
+```
+
+4. You are now ready to run both `server` and `client` server. Open two terminal instances, one in `/client` and the other in `/server` and run the start command in both:
+
+```bash
 npm start
 ```
 
-[Optional]
+*[Optional]*
 
-To change the default server behaviour you can create an `.env` file in server root path to declarte the server variables:
+*To change the default server behaviour you can create an `.env` file in server root path to declarte the server variables:*
 
 ```bash
 vim .env
 ```
 
-Example of server variables:
+*Example of server variables:*
 
 ```bash
 SERVER_PORT=3000
 CLIENT_PORT=1234
 
-```
-
-Once `.env` file is in place, to start the server follow [build instructions](#Build-server)
-
-### Build Client
-
-To build the React app and start the app, run the following commands:
-
-```bash
-cd client
-npm install
-npm start
 ```
 
 ## Run App
