@@ -9,8 +9,7 @@ app.use((req, res) => {
   res.json({ status: "NotFound" });
 });
 
-app.use((err, req, res, next) => {
-  console.error("ERROR", req.method, req.path, err);
+app.use((err, req, res) => {
   if (!res.headersSent) {
     res.status(500);
     res.json({ status: err.message });
