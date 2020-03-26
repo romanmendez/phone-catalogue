@@ -4,17 +4,13 @@ const http = require("http");
 
 let app = require("../app");
 
-// catch 404
 app.use((req, res) => {
   res.status(404);
   res.json({ status: "NotFound" });
 });
 
 app.use((err, req, res, next) => {
-  // always log the error
   console.error("ERROR", req.method, req.path, err);
-
-  // only render if the error ocurred before sending the response
   if (!res.headersSent) {
     res.status(500);
     res.json({ status: err.message });
@@ -28,7 +24,6 @@ server.on("error", error => {
     throw error;
   }
 
-  // handle specific listen errors with friendly messages
   switch (error.code) {
     case "EACCES":
       console.error(`Port ${process.env.SERVER_PORT || 3000} requires elevated privileges`);
