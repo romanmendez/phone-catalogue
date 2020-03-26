@@ -2,7 +2,7 @@
 
 const http = require("http");
 
-let app = require("../app");
+const app = require("../app");
 
 app.use((req, res) => {
   res.status(404);
@@ -16,7 +16,7 @@ app.use((err, req, res) => {
   }
 });
 
-let server = http.createServer(app);
+const server = http.createServer(app);
 
 server.on("error", error => {
   if (error.syscall !== "listen") {
